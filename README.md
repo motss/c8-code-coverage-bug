@@ -16,3 +16,7 @@ There is 1 additional branch has been reported not being covered.
 
 All lines are covered and `c8` should be able to pick up the result correctly.
 
+## How to test
+
+1. Run `npm i` to install depedencies
+2. Run `npm t` to run test with code coverage collection
