@@ -1,5 +1,4 @@
 import type { CalendarWeekday } from '../typings';
-import { toUTCDate } from './to-utc-date';
 import type { GetWeekdaysInit } from './typings';
 
 export function getWeekdays(init: GetWeekdaysInit): CalendarWeekday[] {
@@ -24,7 +23,7 @@ export function getWeekdays(init: GetWeekdaysInit): CalendarWeekday[] {
         []
     ),
     ...Array.from(Array(7)).map<CalendarWeekday>((_, i) => {
-      const d = toUTCDate(2017, 0, fixedFirstDayOfWeek + i);
+      const d = new Date(Date.UTC(2017, 0, fixedFirstDayOfWeek + i));
 
       /** NOTE: Stripping LTR mark away for x-browser compatibilities and consistency reason */
       return {
