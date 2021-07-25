@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@reallyland/tsconfig": "^3.0.2",
+    "@swc/core": "^1.2.66",
+    "@swc/register": "^0.1.7",
+    "c8": "^7.7.3",
+    "esm": "github:agoric-labs/esm#Agoric-built",
+    "typescript": "^4.3.5",
+    "uvu": "^0.5.1"
+  },
+  "scripts": {
+    "test": "c8 --reporter=lcov --exclude=src/__tests__ uvu -r @swc/register -r esm src/__tests__",
+    "ts": "tsc"
+  },
+  "type": "module",
+  "esm": {
+    "cjs": true,
+    "mode": "all",
+    "await": true,
+    "force": true,
+    "wasm": true
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
